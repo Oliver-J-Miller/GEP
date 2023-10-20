@@ -20,6 +20,7 @@ struct Player : Component
 private:
 	int m_count = 0;
 };
+#undef main
 int main()
 {
 	std::shared_ptr<Core> core = Core::initialize();
@@ -30,4 +31,6 @@ int main()
 
 	core->addEntity()->addComponent<Player>();
 	core->start();
+
+	return 0;
 }
