@@ -1,4 +1,0 @@
-﻿  Core.cpp
-D:\s5403397\GEP\myengine\src\myengine\Core.cpp(28,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\s5403397\GEP\myengine\src\myengine\Core.cpp(28,8): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  myengine.vcxproj -> D:\s5403397\GEP\myengine\build\Debug\myengine.lib

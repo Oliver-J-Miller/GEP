@@ -3,6 +3,7 @@
 #include <vector>
 #include <memory>
 #include <SDL.h>
+#include "NativeWindow.h"
 
 namespace myengine
 {
@@ -12,12 +13,14 @@ namespace myengine
 	{
 		Core();
 		~Core();
+		
 		static std::shared_ptr<Core> initialize();
 		std::shared_ptr<Entity> addEntity();
 		void start();
 		void stop();
 
 	private:
+		NativeWindow m_native;
 		std::vector<std::shared_ptr<Entity> > m_entities;
 		bool m_running;
 		int ticks;
@@ -25,8 +28,6 @@ namespace myengine
 		float INITIAL_WIDTH;
 
 		std::weak_ptr<Core> m_self;
-		//SDL_Window* m_nativeWindow;
-		SDL_Window* m_window;
-		SDL_GLContext m_context;
+		
 	};
 }

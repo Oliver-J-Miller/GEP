@@ -1,6 +1,7 @@
 ﻿// game.cpp : Defines the entry point for the application.
 //
 #include <myengine/myengine.h>
+#include <myengine/TriangleRenderer.h>
 #include <iostream>
 #include "game.h"
 
@@ -30,6 +31,7 @@ int main()
 
 
 	core->addEntity()->addComponent<Player>();
+	core->addEntity()->addComponent<TriangleRenderer>();
 	core->start();
 
 	return 0;
