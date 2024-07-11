@@ -11,9 +11,10 @@ struct Player : Component
 {
 	void onTick()
 	{
+		//getEntity->getComponent<Transform>()->setRotation(...);
 		std::cout << "I tick" << std::endl;
 		m_count++;
-		if (m_count == 10)
+		if (m_count == 100)
 		{
 			getEntity()->kill();
 		}
@@ -26,12 +27,15 @@ int main()
 {
 	std::shared_ptr<Core> core = Core::initialize();
 
-	//std::shared_ptr<Entity> entity = core->addEntity();
+	std::shared_ptr<Entity> entity = core->addEntity();
 	//std::shared_ptr<Component> component = entity->addComponent<Component>();
 
 
-	core->addEntity()->addComponent<Player>();
-	core->addEntity()->addComponent<TriangleRenderer>();
+	entity->addComponent<Player>();
+	entity->addComponent<TriangleRenderer>();
+	std::shared_ptr<Transform> t = entity->addComponent<Transform>();
+	t->setPosition(glm::vec3{0,0,-20});
+
 	core->start();
 
 	return 0;

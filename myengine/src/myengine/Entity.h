@@ -16,10 +16,27 @@ namespace myengine
 
 			rtn->m_entity = m_self;
 
-			rtn->initialize();
+			rtn->onInitialize();
 			m_components.push_back(rtn);
 
 			return rtn;
+		}
+
+		template <typename T>
+		std::shared_ptr<T> getComponent()
+		{
+			for (int i = 0; i < m_components.size(); i++)
+			{
+				//find specified component using runtime type identification
+				std::shared_ptr<T> rtn = std::dynamic_pointer_cast<T>(m_components[i]);
+
+				if (rtn)
+				{
+					return rtn;
+				}
+			}
+			//throws if no matching component can be found
+			throw std::runtime_error("failed to find specified component");
 		}
 		bool alive();
 		void kill();

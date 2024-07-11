@@ -25,7 +25,7 @@ namespace myengine
 	void Component::kill()
 	{
 	}
-	void Component::initialize()
+	void Component::onInitialize()
 	{
 		std::cout << "I initialize" << std::endl;
 	}

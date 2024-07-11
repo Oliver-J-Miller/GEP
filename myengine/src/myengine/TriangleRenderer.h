@@ -8,12 +8,12 @@ namespace myengine
 	struct TriangleRenderer : Component
 	{
 		TriangleRenderer();
+		void onInitialize();
 
 	private:
 		rend::Mesh m_mesh;
 		rend::Shader m_shader;
 
-		void onInitialize();
 		void onDisplay();
 	};
 

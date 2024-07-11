@@ -28,6 +28,8 @@ add_library(myengine
 	src/myengine/NativeWindow.cpp
 	src/myengine/TriangleRenderer.h
 	src/myengine/TriangleRenderer.cpp
+	src/myengine/Transform.cpp
+	src/myengine/Transform.h
 )
 
 add_library(rend

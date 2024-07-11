@@ -15,7 +15,7 @@ namespace myengine
 		void tick();
 		void display();
 		void kill();
-		void initialize();
+		virtual void onInitialize();
 
 		std::weak_ptr<Entity> m_entity;
 	};
